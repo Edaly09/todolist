@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
     <title>TodoList</title>
 </head>
 <body>
+    <header>
+        TodoList
+        <img src="./iconesordi/Vector-3.png" alt="Vector-3">
+        <nav>
+                <li>To do</li>
+                <li>Doing</li>
+                <li>Done</li>
+                <li>All</li>        
+      </nav>
+    </header>
+    <main>
+            <section class="addForm">
+                    <form id="submitTodo" action="">
+                            <input type="text">
+                            <button>Submit</button>
+                            <button>Random</button>
+                    </form>
+            </section>
+            <section class="priority">
+                <button>Trie priorités</button>
+                <ul></ul>
+            </section>
+   </main>
    <script src="index.js"></script> 
 </body>
 </html>

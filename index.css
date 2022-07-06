@@ -1,0 +1,16 @@
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+nav{
+    display: flex;
+    margin-right: 20px;
+}
+.addForm{
+    display: flex;
+}
+
