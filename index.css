@@ -23,6 +23,14 @@ body{
         align-items: center;
 }
 
+.pc {
+        display: block;
+}
+
+.tel{
+        display: none;
+}
+
 /* header */
 
 header{
@@ -211,4 +219,14 @@ main{
 
  }
 
+ /* version tel */
 
+@media (max-width:768px){
+        .pc{
+                display: none;
+        }
+        
+        .tel{
+                display: block;
+        }
+}
