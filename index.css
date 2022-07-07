@@ -44,7 +44,7 @@ nav{
         color: rgba(255, 255, 255, 0.67);
 }
 nav li:hover {
-text-decoration: underline;
+text-decoration: 2px underline #9D7DD3;
 font-size: large;
 color: white;
 cursor: pointer;
