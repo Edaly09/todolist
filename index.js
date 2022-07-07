@@ -37,12 +37,16 @@ ulAdd.innerHTML += `
                 <img src="./iconesTel/Vector-2.png"class="stylo tel line${i}" alt="modif" onclick="AffichFormEdit()">
 
 <<<<<<< HEAD
-               <div id="delete"><img src="./iconesordi/Vector-1.png" class="poubelle1 pc" alt="image de modif"></div>
+<<<<<<< HEAD
+               <img src="./iconesordi/Vector-1.png" class="poubelle pc" alt="image de modif">
                 <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="image de modif">
 =======
-                <img src="./iconesordi/Vector-1.png" class="poubel le pc line${i}" alt="supr">
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc line${i}" alt="supr">
+=======
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc line${i}" alt="supr">
+// >>>>>>> 88c5ad65f808eb00c15c232f21a5e0bef9415f9a
                 <img src="./iconesTel/Vector-1.png" class="poubelle tel line${i}" alt="supr">
->>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
+// >>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
 
             </div>
         </div> 
@@ -52,28 +56,28 @@ ulAdd.innerHTML += `
     
     i++
 }
-<<<<<<< HEAD
-const detelete = document.getElementById("delete")
-const deleteTask = () =>{
-ulAdd.innerHTML = ``
+// <<<<<<< HEAD
+// const detelete = document.getElementById("delete")
+// const deleteTask = () =>{
+// ulAdd.innerHTML = ``
 
-}
+// }
 
-const poubelle = document.getElementsByClassName("poubelle1")
-poubelle.addEventListener("click")
-=======
+// const poubelle = document.getElementsByClassName("poubelle")
+// poubelle.addEventListener("click")
+// =======
 
-// Fonction edit
+// // Fonction edit
 
-const AffichFormEdit = () =>{
-    classOfTask = event.target.className
-    console.log(classOfTask);
-    formEdit.classList.add("affiche")
-    formEdit.classList.remove("Naffiche")
-}
+// const AffichFormEdit = () =>{
+//     classOfTask = event.target.className
+//     console.log(classOfTask);
+//     formEdit.classList.add("affiche")
+//     formEdit.classList.remove("Naffiche")
+// }
 
 
-const editTask = () =>{
+// const editTask = () =>{
     
-}
->>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
+// }
+// >>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
