@@ -24,8 +24,6 @@ const onTaskSubmit = () => {
     taskArray.push(taskCreate)
     console.log(taskArray);
     printTask()
-    // deleteTask()
-()
 }
 // Affiche to do
 const printTask = () =>{
@@ -56,13 +54,7 @@ ulAdd.innerHTML += `
 }
 
 
-// suprimer le formulair 
 
-
-const deleteTask = () =>
-{
-        
-}
 
 // Fonction edit
 
