@@ -1,11 +1,14 @@
 // const et variables utiles
-const submitTodo = document.getElementById("submitTodo")
+
 const taskArray = []
 // création todo
 
 const onTaskSubmit = () => { 
-    const taskWrite = document.getElementById("taskwrite")
-    console.log(taskWrite.value);
+    const taskWrite = document.getElementById("taskwrite").value
+    const taskCreate = {
+        value: taskWrite,
+        status: "to do"
+    }
+    taskArray.push(taskCreate)
+    console.log(taskArray);
 }
-
-submitTodo.addEventListener("submit", onTaskSubmit())
