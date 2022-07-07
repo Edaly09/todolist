@@ -35,6 +35,17 @@
                             </div>
                     </form>
                 </article>
+                <article class="flex alignColumn Naffiche" id="formEdit">
+                    <form id="submitTodo" class="flex formulaire alignColumn"  onsubmit="editTask(); return false;">
+                            <input type="text" class="input" id="taskEditValue">
+                            <select name="taskEditStatues" id="taskEditStatues">
+                                <option value="To do">To do</option>
+                                <option value="Doing">Doing</option>
+                                <option value="Done">Done</option>
+                            </select>
+                            <button type="submit" class="submit">Envoyer</button>
+                    </form>
+                </article>
                    
             </section>
             <section class="priority">

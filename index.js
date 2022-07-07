@@ -4,6 +4,10 @@ const taskArray = []
 let ulAdd = document.getElementById("ul")
 let taskCreate
 let taskWrite
+const formEdit = document.getElementById("formEdit")
+let classOfTask
+let i = 0
+
 // création todo
 
 const onTaskSubmit = () => { 
@@ -19,7 +23,7 @@ const onTaskSubmit = () => {
 // Affiche to do
 const printTask = () =>{
 ulAdd.innerHTML += `
-    <li class="flex lines">
+    <li class="flex lines " id="line${i}" >
         <div class="flex line">
             <div class="flex">
                 ${taskWrite} 
@@ -29,19 +33,26 @@ ulAdd.innerHTML += `
 
             <div class="flex">
                 <!-- ${taskCreate.status} -->
-                <img src="./iconesordi/Vector-2.png"class="stylo pc" alt="image de modif">
-                <img src="./iconesTel/Vector-2.png"class="stylo tel" alt="image de modif">
+                <img src="./iconesordi/Vector-2.png"class="stylo pc line${i}" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesTel/Vector-2.png"class="stylo tel line${i}" alt="modif" onclick="AffichFormEdit()">
 
+<<<<<<< HEAD
                <div id="delete"><img src="./iconesordi/Vector-1.png" class="poubelle1 pc" alt="image de modif"></div>
                 <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="image de modif">
+=======
+                <img src="./iconesordi/Vector-1.png" class="poubel le pc line${i}" alt="supr">
+                <img src="./iconesTel/Vector-1.png" class="poubelle tel line${i}" alt="supr">
+>>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
 
             </div>
         </div> 
         <Button>Priorité</Button>  
     </li>
     `
-
+    
+    i++
 }
+<<<<<<< HEAD
 const detelete = document.getElementById("delete")
 const deleteTask = () =>{
 ulAdd.innerHTML = ``
@@ -50,3 +61,19 @@ ulAdd.innerHTML = ``
 
 const poubelle = document.getElementsByClassName("poubelle1")
 poubelle.addEventListener("click")
+=======
+
+// Fonction edit
+
+const AffichFormEdit = () =>{
+    classOfTask = event.target.className
+    console.log(classOfTask);
+    formEdit.classList.add("affiche")
+    formEdit.classList.remove("Naffiche")
+}
+
+
+const editTask = () =>{
+    
+}
+>>>>>>> ca9e212c4f9c82c82ba9e3782ddcc5b4221af7f4
