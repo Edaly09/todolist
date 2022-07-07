@@ -23,7 +23,7 @@ const onTaskSubmit = () => {
 // Affiche to do
 const printTask = () =>{
 ulAdd.innerHTML += `
-    <li class="flex lines line${i}">
+    <li class="flex lines " id="line${i}" >
         <div class="flex line">
             <div class="flex">
                 ${taskWrite} 
@@ -33,11 +33,11 @@ ulAdd.innerHTML += `
 
             <div class="flex">
                 <!-- ${taskCreate.status} -->
-                <img src="./iconesordi/Vector-2.png"class="stylo pc" alt="modif" onclick="AffichFormEdit()">
-                <img src="./iconesTel/Vector-2.png"class="stylo tel" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesordi/Vector-2.png"class="stylo pc line${i}" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesTel/Vector-2.png"class="stylo tel line${i}" alt="modif" onclick="AffichFormEdit()">
 
-                <img src="./iconesordi/Vector-1.png" class="poubelle pc" alt="supr">
-                <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="supr">
+                <img src="./iconesordi/Vector-1.png" class="poubel le pc line${i}" alt="supr">
+                <img src="./iconesTel/Vector-1.png" class="poubelle tel line${i}" alt="supr">
 
             </div>
         </div> 
@@ -52,6 +52,7 @@ ulAdd.innerHTML += `
 
 const AffichFormEdit = () =>{
     classOfTask = event.target.className
+    console.log(classOfTask);
     formEdit.classList.add("affiche")
     formEdit.classList.remove("Naffiche")
 }
