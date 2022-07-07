@@ -41,10 +41,14 @@ nav{
         margin-right: 20px;
         list-style-type: none;
         gap: 45px;
+        color: rgba(255, 255, 255, 0.67);
 }
-li:hover {
+
+nav li:hover {
 text-decoration: underline;
 font-size: large;
+color: white;
+cursor: pointer;
 }
 
 /* main */
