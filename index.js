@@ -36,7 +36,7 @@ ulAdd.innerHTML += `
                 <img src="./iconesordi/Vector-2.png"class="stylo pc line${i}" alt="modif" onclick="AffichFormEdit()">
                 <img src="./iconesTel/Vector-2.png"class="stylo tel line${i}" alt="modif" onclick="AffichFormEdit()">
 
-                <img src="./iconesordi/Vector-1.png" class="poubel le pc line${i}" alt="supr">
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc line${i}" alt="supr">
                 <img src="./iconesTel/Vector-1.png" class="poubelle tel line${i}" alt="supr">
 
             </div>
