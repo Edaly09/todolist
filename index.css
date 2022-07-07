@@ -39,6 +39,10 @@ nav{
         list-style-type: none;
         gap: 45px;
 }
+li:hover {
+text-decoration: underline;
+font-size: large;
+}
 
 /* main */
 
