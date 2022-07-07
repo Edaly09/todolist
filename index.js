@@ -18,6 +18,16 @@ const onTaskSubmit = () => {
 }
 // Affiche to do
 const printTask = () =>{
-ulAdd.innerHTML = `<li class="flex lines"><div class="flex line"><div class="flex">${taskWrite} <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche"> <img src="./iconesordi/check.png" alt="Done" class="done Naffiche"></div><div class="flex"> <!-- ${taskCreate.status} --> <img src="./iconesordi/Vector-2.png"class="stylo" alt="image de modif"> <img src="./iconesordi/Vector-1.png" class="poubelle" alt="image de modif"></div></div> <Button>Priorité</Button>  </li>`
+
+ulAdd.innerHTML += `<li class="flex lines">
+
+<div class="flex line">
+
+<div class="flex">
+${taskWrite}
+ <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche"> 
+
+<img src="./iconesordi/check.png" alt="Done" class="done Naffiche"></div><div class="flex"> <!-- ${taskCreate.status} --> <img src="./iconesordi/Vector-2.png"class="styloPc" alt="image de modif"> <img src="./iconesordi/Vector-1.png"class="poubellePc " alt="image de modif"> </div></div> <Button>Priorité</Button> </li>`            
+
 
 }
