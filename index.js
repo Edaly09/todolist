@@ -32,7 +32,7 @@ ulAdd.innerHTML += `
                 <img src="./iconesordi/Vector-2.png"class="stylo pc" alt="image de modif">
                 <img src="./iconesTel/Vector-2.png"class="stylo tel" alt="image de modif">
 
-                <img src="./iconesordi/Vector-1.png" class="poubelle pc" alt="image de modif">
+               <div id="delete"><img src="./iconesordi/Vector-1.png" class="poubelle1 pc" alt="image de modif"></div>
                 <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="image de modif">
 
             </div>
@@ -42,3 +42,11 @@ ulAdd.innerHTML += `
     `
 
 }
+const detelete = document.getElementById("delete")
+const deleteTask = () =>{
+ulAdd.innerHTML = ``
+
+}
+
+const poubelle = document.getElementsByClassName("poubelle1")
+poubelle.addEventListener("click")
