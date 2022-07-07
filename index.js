@@ -39,10 +39,10 @@ ulAdd.innerHTML += `
             <div class="flex">
                 <!-- ${taskCreate.status} -->
                 <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-                <img src="./iconesTel/Vector-2.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
 
-                <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr">
-                <img src="./iconesTel/Vector-1.png" class="poubelle tel ${i}" alt="supr">
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
+                <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
 
             </div>
         </div> 
@@ -87,10 +87,10 @@ const editTask = () =>{
             <div class="flex">
                 <!-- ${taskCreate[number].status} -->
                 <img src="./iconesordi/Vector-2.png"class="stylo pc ${number}" alt="modif" onclick="AffichFormEdit()">
-                <img src="./iconesTel/Vector-2.png"class="stylo tel ${number}" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesTel/Vector-1.png"class="stylo tel ${number}" alt="modif" onclick="AffichFormEdit()">
 
-                <img src="./iconesordi/Vector-1.png" class="poubelle pc ${number}" alt="supr">
-                <img src="./iconesTel/Vector-1.png" class="poubelle tel ${number}" alt="supr">
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc ${number}" alt="supr" onclick="Delete()">
+                <img src="./iconesTel/Vector-2.png" class="poubelle tel ${number}" alt="supr" onclick="Delete()">
 
             </div>
         </div> 
@@ -120,4 +120,18 @@ const editTask = () =>{
 
     formEdit.classList.add("Naffiche")
     formEdit.classList.remove("affiche")
+}
+
+// deleteTask
+
+const Delete = () =>{
+    classOfTask = event.target.className
+    arrayClassOffTask=classOfTask.split(" ")
+    taskSupr = arrayClassOffTask[2]
+    i=0
+    ulAdd.innerHTML=``
+    taskArray.splice(taskSupr,1)
+    taskArray.forEach(element => {
+    printTask() 
+    });
 }
