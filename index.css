@@ -150,9 +150,190 @@ main{
         margin-bottom: 49px;
         border-radius: 50px;
 }
+.burgermenu{
+        display: none;
+}
 
-@media (max-width:768PX) {
+/* version Tablette */
+
+@media (max-width:992px) {
+        main.flex{
+                display: block;
+                margin-left: 15px;
+                margin-right: 15px;
+        }
+        nav,li{
+                display: none;
+        }
+        .espace{
+                display: none;
+        }
+        header.flex{
+                display: flex;
+                width: auto;
+                Width:295px;
+                Height:75px;
+                margin-right: 25px;
+
+        }
+        .burgermenu{
+                display: block;
+                margin-left: 600px;
+                margin-right: 55px;
+                width: 100px;
+                height: 100px;
+              
+
+        }
+        h1{
+                width: 100px;
+                height: 90px;
+                font-family: 'Reem Kufi Fun';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 100px;
+                color: #FFFFFF;
+        }
+        .priority button{
+                width: 133.96px;
+                height: 49px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+        }
+
+        .addForm{
+                width: 600px;
+                 height: 320px;
+                margin-left: 100px;
+                height: 320px;
+
+        }
+        .addForm article{
+                width: 245.55px;
+                height: 215.32px;
+                margin-left: 150px;
+                height: 320px;
+
+        }
+        .input{
+                width: 245.55px;
+                height: 52.88px;
+                left: 37px;
+
+        }
+        .deuxbuttons{
+                width: 250.89px;
+                height: 80.32px;
+                margin-left: 70px;
+                margin-top: 15px;
+        }
+        .trie{
+                width: 133.96px;
+                height: 49px;
+                margin-right: 142px;
+                margin-left: 3.04px;
+        }
+        .input{
+                width: 245.55px;
+                height: 52.88px;
+        }
+       
         
 }
+
+/* Version mobile */
+
+@media (max-width:768PX) {
+       main.flex{
+                display: block;
+                margin-left: 15px;
+                margin-right: 15px;
+        }
+        nav,li{
+                display: none;
+        }
+        .espace{
+                display: none;
+        }
+        header.flex{
+                display: flex;
+                width: auto;
+                Width:295px;
+                Height:75px;
+                margin-right: 25px;
+
+        }
+        .burgermenu{
+                display: block;
+                margin-left: 600px;
+                margin-right: 55px;
+                width: 100px;
+                height: 100px;
+              
+
+        }
+        h1{
+                width: 100px;
+                height: 90px;
+                font-family: 'Reem Kufi Fun';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 100px;
+                color: #FFFFFF;
+        }
+        .priority button{
+                width: 133.96px;
+                height: 49px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+        }
+
+        .addForm{
+                width: 600px;
+                 height: 320px;
+                 /* height: 215.32px; */
+                margin-left: 100px;
+                height: 320px;
+
+        }
+        .addForm article{
+                width: 245.55px;
+                height: 215.32px;
+                /* margin-left: 100px; */
+                margin-left: 150px;
+                height: 320px;
+
+        }
+        .input{
+                width: 245.55px;
+                height: 52.88px;
+                left: 37px;
+
+        }
+        .deuxbuttons{
+                width: 250.89px;
+                height: 80.32px;
+                margin-left: 70px;
+                margin-top: 15px;
+        }
+        .trie{
+                width: 133.96px;
+                height: 49px;
+                margin-right: 142px;
+                margin-left: 3.04px;
+        }
+        .input{
+                width: 245.55px;
+                height: 52.88px;
+        }
+       
+       
+     
+}
+
 
 
