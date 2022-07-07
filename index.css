@@ -18,6 +18,11 @@ body{
         display: flex;
 }
 
+.alignColumn{
+        flex-direction: column;
+        align-items: center;
+}
+
 /* header */
 
 header{
@@ -55,40 +60,33 @@ cursor: pointer;
 
 main{
         margin-top: 100px;
-        gap: 280px;
+        justify-content: space-between;
 }
 
 /* form */
 
 .addForm{
      margin-top: 40px;
-     background: #5626A4;
-     box-shadow: inset 0px 0px 20px 5px #3B1973;
-     width: 415px;
-     height: 267px;
+     width: 50%;
 }
 
 .addForm article{
-        width: 318.45px;
-        height: 215.12px;
-        margin-left: 48px;
-        margin-right: 48.44px;
+        width: 50%;
+        background: #5626A4;
+        box-shadow: inset 0px 0px 20px 5px #3B1973;
         padding-top:21.95px;
         padding-bottom:29.93px;
 }
 
-.input{
-        background: #FFFFFF;
-        width: 318.45px;
-        height: 52.88px;
-        color: black;
+.formulaire{
+        width: 90%;
 }
 
-.deuxbuttons{
-
-        display: block;
-        margin-left: 70px;
-        margin-top: 15px;
+.input{
+        background: #FFFFFF;
+        width: 100%;
+        height: 52.88px;
+        color: black;
 }
 
 .random{
@@ -123,7 +121,7 @@ main{
 
 .priority{
         margin-top: 35px;
-        width: 100%;
+        width: 50%;
         height: 100%;
         background: #5526A4;
         box-shadow: 0px 0px 250px #190835;
@@ -156,184 +154,34 @@ main{
 
 /* version Tablette */
 
-@media (max-width:992px) {
-        main.flex{
-                display: block;
-                margin-left: 15px;
-                margin-right: 15px;
+ @media (max-width:992px) {
+        main{
+                flex-direction: column;
+                margin-top: 0;
         }
+
+        .addForm{
+                width: 100%;
+        }
+        .addForm article{
+                width: 100%;
+        }
+
+        .priority{
+                width: 100%;
+        }
+
         nav,li{
                 display: none;
         }
         .espace{
                 display: none;
         }
-        header.flex{
-                display: flex;
-                width: 100%;
-                Width:295px;
-                Height:75px;
-                margin-right: 25px;
-
-        }
         .burgermenu{
                 display: block;
-                margin-left: 600px;
-                margin-right: 55px;
-                width: 100px;
-                height: 100px;
-              
-
-        }
-        h1{
-                width: 100px;
-                height: 90px;
-                font-family: 'Reem Kufi Fun';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 100px;
-                color: #FFFFFF;
-        }
-        .priority button{
-                width: 133.96px;
-                height: 49px;
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 300;
-                font-size: 20px;
         }
 
-        .addForm{
-                width: 100%;
-                 height: 320px;
-                margin-left: 100px;
-                height: 320px;
 
-        }
-        .addForm article{
-                width: 245.55px;
-                height: 100%;
-                margin-left: 150px;
-                height: 320px;
-
-        }
-        .input{
-                width: 245.55px;
-                height: 52.88px;
-                left: 37px;
-
-        }
-        .deuxbuttons{
-                width: 250.89px;
-                height: 80.32px;
-                margin-left: 70px;
-                margin-top: 15px;
-        }
-        .trie{
-                width: 133.96px;
-                height: 49px;
-                margin-right: 142px;
-                margin-left: 3.04px;
-        }
-        .input{
-                width: 245.55px;
-                height: 52.88px;
-        }
-       
-        
-}
-
-/* Version mobile */
-
-@media (max-width:768PX) {
-       main.flex{
-                display: block;
-                margin-left: 15px;
-                margin-right: 15px;
-        }
-        nav,li{
-                display: none;
-        }
-        .espace{
-                display: none;
-        }
-        header.flex{
-                display: flex;
-                width: auto;
-                Width:295px;
-                Height:75px;
-                margin-right: 25px;
-
-        }
-        .burgermenu{
-                display: block;
-                margin-left: 600px;
-                margin-right: 55px;
-                width: 100px;
-                height: 100px;
-              
-
-        }
-        h1{
-                width: 100px;
-                height: 90px;
-                font-family: 'Reem Kufi Fun';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 100px;
-                color: #FFFFFF;
-        }
-        .priority button{
-                width: 133.96px;
-                height: 49px;
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 300;
-                font-size: 20px;
-        }
-
-        .addForm{
-                width: 600px;
-                 height: 320px;
-                 /* height: 215.32px; */
-                margin-left: 100px;
-                height: 320px;
-
-        }
-        .addForm article{
-                width: 245.55px;
-                height: 215.32px;
-                /* margin-left: 100px; */
-                margin-left: 150px;
-                height: 320px;
-
-        }
-        .input{
-                width: 245.55px;
-                height: 52.88px;
-                left: 37px;
-
-        }
-        .deuxbuttons{
-                width: 250.89px;
-                height: 80.32px;
-                margin-left: 70px;
-                margin-top: 15px;
-        }
-        .trie{
-                width: 133.96px;
-                height: 49px;
-                margin-right: 142px;
-                margin-left: 3.04px;
-        }
-        .input{
-                width: 245.55px;
-                height: 52.88px;
-        }
-       
-       
-     
-}
-
+ }
 
 
