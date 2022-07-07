@@ -129,24 +129,49 @@ main{
     }
   
 .trie{
-        color: #FFFFFF;
-        font-family: 'Roboto';
-        font-style: normal;
         font-weight: 300;
         font-size: 33px;
-        margin-bottom: 10px;
+        margin-top: 48px;
+        margin-bottom: 49px;
         margin-left: 9px;
 
 }
 
 .priority button{
+        
+        color: #FFFFFF;
         background: #5526A4;
         border: 1px solid rgba(0, 0, 0, 0.26);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-        margin-top: 48px;
-        margin-bottom: 49px;
         border-radius: 50px;
 }
+
+.lines{
+        align-items: center;
+        margin: 0 9px;
+        gap: 38px;
+}
+
+.lines button{
+        width: 100px;
+        height: 50px;
+}
+
+.line {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 23px;
+}
+
+.Naffiche{
+        display: none;
+}
+
+.affiche{
+        display: block;
+}
+
 .burgermenu{
         display: none;
 }
@@ -170,12 +195,14 @@ main{
                 width: 100%;
         }
 
-        nav,li{
+        nav{
                 display: none;
         }
+
         .espace{
                 display: none;
         }
+        
         .burgermenu{
                 display: block;
         }
