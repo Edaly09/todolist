@@ -18,7 +18,7 @@ const onTaskSubmit = () => {
 }
 // Affiche to do
 const printTask = () =>{
-ulAdd.innerHTML = `
+ulAdd.innerHTML += `
     <li class="flex lines">
         <div class="flex line">
             <div class="flex">
