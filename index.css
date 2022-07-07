@@ -195,14 +195,14 @@ main{
                 width: 100%;
         }
 
-        nav{
+        nav li{
                 display: none;
         }
 
         .espace{
                 display: none;
         }
-        
+
         .burgermenu{
                 display: block;
         }
