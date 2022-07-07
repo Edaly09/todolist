@@ -135,8 +135,7 @@ main{
         box-shadow: 0px 0px 250px #190835;
         color: #FFFFFF;
     }
-
-
+  
 .trie{
         font-weight: 300;
         font-size: 33px;
@@ -173,6 +172,10 @@ main{
         padding: 23px;
         box-shadow: inset 0px 0px 20px 5px #3B1973;
 }
+.flex{
+        gap: 20px;
+        margin-bottom: 10px;
+}
 
 .Naffiche{
         display: none;
@@ -180,6 +183,12 @@ main{
 
 .affiche{
         display: block;
+}
+.styloTel{
+        display: none;
+}
+.poubelleTel{
+        display: none;
 }
 
 .burgermenu{
@@ -216,6 +225,8 @@ main{
         .burgermenu{
                 display: block;
         }
+
+     
 
 
  }
