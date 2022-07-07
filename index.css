@@ -6,18 +6,23 @@
 body{
         background: #5626A4;
         font-family: 'Roboto', sans-serif;
+        margin: 0 25px;
    }
 
    h1{
         font-family: 'Reem Kufi', sans-serif;
     }
 
+.flex{
+        display: flex;
+}
+
 /* header */
 
 header{
-        display: flex;
+
+        justify-content: space-between;
         margin-top: 20px;
-        margin-left: 20px;
         color: #FFFFFF;
     
 }
@@ -33,9 +38,7 @@ header{
 /* nav */
 
 nav{
-        display: flex;
         margin-right: 20px;
-        margin-left: 900px;
         list-style-type: none;
         gap: 45px;
 }
@@ -47,9 +50,7 @@ font-size: large;
 /* main */
 
 main{
-        margin-left: 240px;
         margin-top: 100px;
-        display: flex;
         gap: 280px;
 }
 
@@ -61,7 +62,6 @@ main{
      box-shadow: inset 0px 0px 20px 5px #3B1973;
      width: 415px;
      height: 267px;
-     margin-left: -190px;
 }
 
 .addForm article{
@@ -114,6 +114,16 @@ main{
 
 /* List todo */
 
+.priority{
+        margin-top: 35px;
+        width: 857px;
+        height: 100%;
+        background: #5526A4;
+        box-shadow: 0px 0px 250px #190835;
+        color: #FFFFFF;
+    }
+
+
 .trie{
         color: #FFFFFF;
         font-family: 'Roboto';
@@ -132,15 +142,6 @@ main{
         border-radius: 50px;
 }
 
-.priority{
-        margin-top: 35px;
-        width: 857px;
-        height: auto;
-        background: #5526A4;
-        box-shadow: 0px 0px 250px #190835;
-        margin-right: 103px;
-        color: #FFFFFF;
-    }
 
 
 
