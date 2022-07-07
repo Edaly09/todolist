@@ -18,6 +18,6 @@ const onTaskSubmit = () => {
 }
 // Affiche to do
 const printTask = () =>{
-ulAdd.innerHTML = `<li>${taskWrite} <!-- ${taskCreate.status} --> <img src="./iconesordi/Vector-2.png" alt="image de modif"> <img src="./iconesordi/Vector-1.png" alt="image de modif">  </li>`
+ulAdd.innerHTML = `<li>${taskWrite} <!-- ${taskCreate.status} --> <img src="./iconesordi/Vector-2.png"class="stylo" alt="image de modif"> <img src="./iconesordi/Vector-1.png" class="poubelle" alt="image de modif">  </li>`
 
 }
