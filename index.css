@@ -172,6 +172,11 @@ main{
         padding: 23px;
         box-shadow: inset 0px 0px 20px 5px #3B1973;
 }
+
+.line img:hover{
+        cursor: pointer;
+}
+
 .flex{
         gap: 20px;
         margin-bottom: 10px;
@@ -182,7 +187,7 @@ main{
 }
 
 .affiche{
-        display: block;
+        display: flex;
 }
 .styloTel{
         display: none;

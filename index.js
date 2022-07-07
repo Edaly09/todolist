@@ -4,6 +4,10 @@ const taskArray = []
 let ulAdd = document.getElementById("ul")
 let taskCreate
 let taskWrite
+const formEdit = document.getElementById("formEdit")
+let classOfTask
+let i = 0
+
 // création todo
 
 const onTaskSubmit = () => { 
@@ -19,7 +23,7 @@ const onTaskSubmit = () => {
 // Affiche to do
 const printTask = () =>{
 ulAdd.innerHTML += `
-    <li class="flex lines">
+    <li class="flex lines line${i}">
         <div class="flex line">
             <div class="flex">
                 ${taskWrite} 
@@ -29,16 +33,30 @@ ulAdd.innerHTML += `
 
             <div class="flex">
                 <!-- ${taskCreate.status} -->
-                <img src="./iconesordi/Vector-2.png"class="stylo pc" alt="image de modif">
-                <img src="./iconesTel/Vector-2.png"class="stylo tel" alt="image de modif">
+                <img src="./iconesordi/Vector-2.png"class="stylo pc" alt="modif" onclick="AffichFormEdit()">
+                <img src="./iconesTel/Vector-2.png"class="stylo tel" alt="modif" onclick="AffichFormEdit()">
 
-                <img src="./iconesordi/Vector-1.png" class="poubelle pc" alt="image de modif">
-                <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="image de modif">
+                <img src="./iconesordi/Vector-1.png" class="poubelle pc" alt="supr">
+                <img src="./iconesTel/Vector-1.png" class="poubelle tel" alt="supr">
 
             </div>
         </div> 
         <Button>Priorité</Button>  
     </li>
     `
+    
+    i++
+}
 
+// Fonction edit
+
+const AffichFormEdit = () =>{
+    classOfTask = event.target.className
+    formEdit.classList.add("affiche")
+    formEdit.classList.remove("Naffiche")
+}
+
+
+const editTask = () =>{
+    
 }
