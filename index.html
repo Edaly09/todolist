@@ -27,7 +27,7 @@
     <main class="flex">
             <section class="addForm">
                 <article class="flex alignColumn">
-                    <form id="submitTodo" class="flex formulaire alignColumn">
+                    <form id="submitTodo" class="flex formulaire alignColumn"  onsubmit="onTaskSubmit(); return false;">
                             <input type="text" class="input" id="taskwrite">
                             <div class="deuxbuttons flex alignColumn">
                             <button type="submit" class="submit">Envoyer</button>
