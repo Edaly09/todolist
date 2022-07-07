@@ -157,7 +157,7 @@ main{
 
 .lines{
         align-items: center;
-        margin: 0 9px;
+        margin: 0 9px 12px;
         gap: 38px;
 }
 
@@ -170,7 +170,8 @@ main{
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 0 23px;
+        padding: 23px;
+        box-shadow: inset 0px 0px 20px 5px #3B1973;
 }
 
 .Naffiche{
@@ -228,5 +229,13 @@ main{
         
         .tel{
                 display: block;
+        }
+
+        .lines{
+                flex-direction: column;
+        }
+
+        .line{
+                width: 70%;
         }
 }
