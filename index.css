@@ -45,7 +45,7 @@ nav{
 }
 
 nav li:hover {
-text-decoration: underline;
+text-decoration: 2px underline #9D7DD3;
 font-size: large;
 color: white;
 cursor: pointer;
