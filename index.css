@@ -1,11 +1,15 @@
+
 /* général */
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Roboto&display=swap');
 
 body{
         background: #5626A4;
+        font-family: 'Roboto', sans-serif;
    }
 
    h1{
-        font-family: 'Reem Kufi Fun';
+        font-family: 'Reem Kufi', sans-serif;
     }
 
 /* header */
