@@ -1,3 +1,14 @@
+/* général */
+
+body{
+        background: #5626A4;
+   }
+
+   h1{
+        font-family: 'Reem Kufi Fun';
+    }
+
+/* header */
 
 header{
         display: flex;
@@ -6,25 +17,45 @@ header{
         color: #FFFFFF;
     
 }
+
+/* icone */
+
+.espace{
+        margin-left: 10px;
+        width: 20px;
+}
+
+
+/* nav */
+
 nav{
         display: flex;
         margin-right: 20px;
         margin-left: 900px;
-        text-decoration: none;
-        font-family: 'Reem Kufi Fun';
-        font-style: normal;
-        font-weight: 400px,bold;
         list-style-type: none;
         gap: 45px;
 }
+
+/* main */
+
+main{
+        margin-left: 240px;
+        margin-top: 100px;
+        display: flex;
+        gap: 280px;
+}
+
+/* form */
+
 .addForm{
      margin-top: 40px;
-     background: #5527A4;
+     background: #5626A4;
      box-shadow: inset 0px 0px 20px 5px #3B1973;
      width: 415px;
      height: 267px;
      margin-left: -190px;
 }
+
 .addForm article{
         width: 318.45px;
         height: 215.12px;
@@ -33,12 +64,23 @@ nav{
         padding-top:21.95px;
         padding-bottom:29.93px;
 }
+
+.input{
+        background: #FFFFFF;
+        width: 318.45px;
+        height: 52.88px;
+        color: black;
+}
+
 .deuxbuttons{
+
         display: block;
         margin-left: 70px;
         margin-top: 15px;
 }
+
 .random{
+
         display: block;
         margin-top: 7px;
         border-radius: 50px;
@@ -50,6 +92,7 @@ nav{
         font-weight: 300;
         font-size: 33px;
 }
+
 .submit{
         border-radius: 50px;
         background: #5526A4;
@@ -60,6 +103,9 @@ nav{
         font-weight: 300;
         font-size: 33px;
 }
+
+/* List todo */
+
 .trie{
         color: #FFFFFF;
         font-family: 'Roboto';
@@ -69,13 +115,6 @@ nav{
         margin-bottom: 10px;
 }
 
-.espace{
-        margin-left: 10px;
-        width: 20px;
-}
-body{
-     background: #5626A4;
-}
 .priority button{
         background: #5526A4;
         border: 1px solid rgba(0, 0, 0, 0.26);
@@ -84,12 +123,7 @@ body{
         margin-bottom: 49px;
         border-radius: 50px;
 }
-main{
-        margin-left: 240px;
-        margin-top: 100px;
-        display: flex;
-        gap: 280px;
-}
+
 .priority{
         margin-top: 35px;
         width: 857px;
@@ -99,16 +133,6 @@ main{
         margin-right: 103px;
         color: #FFFFFF;
     }
-.input{
-        background: #FFFFFF;
-        width: 318.45px;
-        height: 52.88px;
-        color: black;
-}
-h1{
-    font-family: 'Reem Kufi Fun';
-font-style: normal;
-font-weight: 400px;
-}
+
 
 

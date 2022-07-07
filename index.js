@@ -3,6 +3,6 @@
 
 // création todo
 
-const onTaskSubmit = () =>{
+const onTaskSubmit = () => { 
     console.log("je suis appelé");
 }
