@@ -179,9 +179,9 @@ main{
         cursor: pointer;
 }
 
-.flex{
+.line div{
+        align-items: center;
         gap: 20px;
-        margin-bottom: 10px;
 }
 
 .Naffiche{
