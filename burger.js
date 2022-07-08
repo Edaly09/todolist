@@ -15,6 +15,6 @@ const burgerOpen = () =>{
 const burgerClose = () =>{
     openBurger.classList.remove("affiche")
     openBurger.classList.add("Naffiche")
-    burgerIcone.classList.add("afficheburgermenu")
+    burgerIcone.classList.add("burgermenu")
     burgerIcone.classList.remove("Naffiche")
 }

@@ -1,6 +1,6 @@
 // const et variables utiles
 
-const taskArray = []
+let taskArray = []
 let ulAdd = document.getElementById("ul")
 let taskCreate
 let taskWrite
@@ -12,6 +12,8 @@ let taskEditStatues
 let Limodiff
 let Doing
 let Done
+let theFiltre
+let filterArray = []
 
 // création todo
 
@@ -19,25 +21,29 @@ const onTaskSubmit = () => {
      taskWrite = document.getElementById("taskwrite").value
     taskCreate = {
         value: taskWrite,
-        status: "to do"
+        status: "To do"
     }
     taskArray.push(taskCreate)
-    console.log(taskArray);
-    printTask()
+    ulAdd.innerHTML=``
+    i=0
+    taskArray.forEach(element=>{
+        printTask(element)
+    })
+    
 }
 // Affiche to do
-const printTask = () =>{
+const printTask = (element) =>{
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
         <div class="flex line">
             <div class="flex">
-                ${taskWrite} 
-                <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-                <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
+                ${element.value} 
+                <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing${i}">
+                <img src="./iconesordi/check.png" alt="Done" class="done Naffiche" id="Done${i}">
             </div>
 
             <div class="flex">
-                <!-- ${taskCreate.status} -->
+                <!-- ${element.status} -->
                 <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
                 <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
 
@@ -49,7 +55,28 @@ ulAdd.innerHTML += `
         <Button>Priorité</Button>  
     </li>
     `
-    
+
+    Doing=document.getElementById(`Doing${i}`)
+    Done=document.getElementById(`Done${i}`)
+    console.log(Doing);
+
+        if (element.status==="Doing"){
+            Doing.classList.remove("Naffiche")
+            Doing.classList.add("affiche")
+            Done.classList.remove("affiche")
+            Done.classList.add("Naffiche")
+        }else if (element.status.status==="Done"){
+            Doing.classList.remove("affiche")
+            Doing.classList.add("Naffiche")
+            Done.classList.remove("Naffiche")
+            Done.classList.add("affiche")
+        }else if (element.status==="To do"){
+            Doing.classList.remove("Naffiche")
+            Doing.classList.add("Naffiche")
+            Done.classList.remove("Naffiche")
+            Done.classList.add("Naffiche")
+        }
+
     i++
 }
 
@@ -68,6 +95,10 @@ const editTask = () =>{
     arrayClassOffTask=classOfTask.split(" ")
     const number=arrayClassOffTask[2]
     taskCreate[number] = {
+        value: taskEditValue,
+        status: taskEditStatues
+    }
+    taskArray[number] = {
         value: taskEditValue,
         status: taskEditStatues
     }
@@ -95,7 +126,6 @@ const editTask = () =>{
         Doing=document.getElementById(`Doing${number}`)
         Done=document.getElementById(`Done${number}`)
 
-        console.log(Doing,Done);
 
         if (taskCreate[number].status==="Doing"){
             Doing.classList.remove("Naffiche")
@@ -128,6 +158,73 @@ const Delete = () =>{
     ulAdd.innerHTML=``
     taskArray.splice(taskSupr,1)
     taskArray.forEach(element => {
-    printTask() 
+    printTask(element) 
+        
     });
+}
+
+// filtre
+
+const statusFilter = () =>{
+    theFiltre=event.target.id
+    console.log(theFiltre);
+    i=0
+    ulAdd.innerHTML=``
+
+    if(theFiltre === "All"){
+        taskArray.forEach(element =>{
+            printTask()
+        })
+    }else{
+        taskArray.forEach(element=>{
+            console.log(element.status);
+            if (element.status === theFiltre){
+                filterArray.push(element)   
+            }
+            if (theFiltre==="Doing"){
+                Doing.classList.remove("Naffiche")
+                Doing.classList.add("affiche")
+                Done.classList.remove("affiche")
+                Done.classList.add("Naffiche")
+            }else if (theFiltre==="Done"){
+                Doing.classList.remove("affiche")
+                Doing.classList.add("Naffiche")
+                Done.classList.remove("Naffiche")
+                Done.classList.add("affiche")
+            }else if (theFiltre==="To do"){
+                Doing.classList.remove("Naffiche")
+                Doing.classList.add("Naffiche")
+                Done.classList.remove("Naffiche")
+                Done.classList.add("Naffiche")
+            }
+        })
+        console.log(filterArray);
+        filterArray.forEach(element=>{
+            ulAdd.innerHTML += `
+            <li class="flex lines " id="${i}" >
+                <div class="flex line">
+                    <div class="flex">
+                        ${element.value} 
+                        <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
+                        <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
+                    </div>
+        
+                    <div class="flex">
+                        <!-- ${element.status} -->
+                        <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
+                        <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
+        
+                        <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
+                        <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
+        
+                    </div>
+                </div> 
+                <Button>Priorité</Button>  
+            </li>
+            `
+            
+            i++
+        })
+    }
+   filterArray=[]
 }

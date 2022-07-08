@@ -16,23 +16,23 @@
             <img src="./iconesordi/Vector-3.png" class="espace" alt="Vector-3">
         </section>
 
-        <div class="Naffiche burger alignColumn" id="burger"> 
+        <div class="Naffiche burger alignColumn burgerMenuDisplay" id="burger"> 
             <nav class="flex alignColumn">
-                <li>To do</li>
-                <li>Doing</li>
-                <li>Done</li>
-                <li>All</li>
+                <li id="To do filtre" onclick="statusFilter()">To do</li>
+                <li id="Doing filtre" onclick="statusFilter()">Doing</li>
+                <li id="Done filtre" onclick="statusFilter()">Done</li>
+                <li id="All filtre" onclick="statusFilter()">All</li>
                 <img src="./iconesTel/cross.png" alt="Fermer burger" onclick="burgerClose()" class="burgerCross">
             </nav>
         </div>
        
-        <nav class="flex pc">
+        <nav class="flex navpc">
                 <li>To do</li>
                 <li>Doing</li>
                 <li>Done</li>
                 <li>All</li> 
       </nav>
-      <img src="./iconesTel/Vector-3.png" id="burgermenu" class="burgermenu" alt="menu burger " onclick="burgerOpen()">       
+      <img src="./iconesTel/Vector-3.png" id="burgermenu" class="burgermenu burgerMenuDisplay" alt="menu burger " onclick="burgerOpen()">       
 
     </header>
     <main class="flex">
