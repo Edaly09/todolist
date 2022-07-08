@@ -68,6 +68,15 @@ color: white;
 cursor: pointer;
 }
 
+.navpc{
+        display: flex;
+}
+
+.burgerMenuDisplay{
+        display: none;
+}
+
+
 /* main */
 
 main{
@@ -235,6 +244,10 @@ select{
         main{
                 flex-direction: column;
                 margin-top: 0;
+        }
+
+        .navpc{
+                display: none;
         }
 
         .addForm{

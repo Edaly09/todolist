@@ -1,6 +1,6 @@
 // const et variables utiles
 
-const taskArray = []
+let taskArray = []
 let ulAdd = document.getElementById("ul")
 let taskCreate
 let taskWrite
@@ -20,7 +20,7 @@ const onTaskSubmit = () => {
      taskWrite = document.getElementById("taskwrite").value
     taskCreate = {
         value: taskWrite,
-        status: "to do"
+        status: "To do"
     }
     taskArray.push(taskCreate)
     console.log(taskArray);
@@ -28,18 +28,18 @@ const onTaskSubmit = () => {
     
 }
 // Affiche to do
-const printTask = () =>{
+const printTask = (element) =>{
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
         <div class="flex line">
             <div class="flex">
-                ${taskWrite} 
-                <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-                <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
+                ${element.value} 
+                <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing${i}">
+                <img src="./iconesordi/check.png" alt="Done" class="done Naffiche" id="Done${i}">
             </div>
 
             <div class="flex">
-                <!-- ${taskCreate.status} -->
+                <!-- ${element.status} -->
                 <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
                 <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
 
@@ -51,7 +51,28 @@ ulAdd.innerHTML += `
         <Button>Priorité</Button>  
     </li>
     `
-    
+
+    Doing=document.getElementById(`Doing${i}`)
+    Done=document.getElementById(`Done${i}`)
+    console.log(Doing);
+
+        if (element.status==="Doing"){
+            Doing.classList.remove("Naffiche")
+            Doing.classList.add("affiche")
+            Done.classList.remove("affiche")
+            Done.classList.add("Naffiche")
+        }else if (element.status.status==="Done"){
+            Doing.classList.remove("affiche")
+            Doing.classList.add("Naffiche")
+            Done.classList.remove("Naffiche")
+            Done.classList.add("affiche")
+        }else if (element.status==="To do"){
+            Doing.classList.remove("Naffiche")
+            Doing.classList.add("Naffiche")
+            Done.classList.remove("Naffiche")
+            Done.classList.add("Naffiche")
+        }
+
     i++
 }
 
@@ -74,6 +95,10 @@ const editTask = () =>{
     arrayClassOffTask=classOfTask.split(" ")
     const number=arrayClassOffTask[2]
     taskCreate[number] = {
+        value: taskEditValue,
+        status: taskEditStatues
+    }
+    taskArray[number] = {
         value: taskEditValue,
         status: taskEditStatues
     }
@@ -101,7 +126,6 @@ const editTask = () =>{
         Doing=document.getElementById(`Doing${number}`)
         Done=document.getElementById(`Done${number}`)
 
-        console.log(Doing,Done);
 
         if (taskCreate[number].status==="Doing"){
             Doing.classList.remove("Naffiche")
@@ -144,9 +168,8 @@ const Delete = () =>{
 const randomTask = () =>{
     taskWrite = document.getElementById("taskwrite").value
 
-    // for(let j = 1; j <= 1; j++){
 
-        const random = Math.floor(Math.random() * 4) + 1
+        const random = Math.floor(Math.random() * 3) + 1
 
         if(random === 1){
 
