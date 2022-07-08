@@ -12,7 +12,8 @@ let taskEditStatues
 let Limodiff
 let Doing
 let Done
-let buttonRandom 
+let theFiltre
+let filterArray = []
 
 // création todo
 
@@ -23,8 +24,11 @@ const onTaskSubmit = () => {
         status: "To do"
     }
     taskArray.push(taskCreate)
-    console.log(taskArray);
-    printTask()
+    ulAdd.innerHTML=``
+    i=0
+    taskArray.forEach(element=>{
+        printTask(element)
+    })
     
 }
 // Affiche to do
@@ -76,9 +80,6 @@ ulAdd.innerHTML += `
     i++
 }
 
-
-
-
 // Fonction edit
 
 const AffichFormEdit = () =>{
@@ -86,7 +87,6 @@ const AffichFormEdit = () =>{
     formEdit.classList.add("affiche")
     formEdit.classList.remove("Naffiche")
 }
-
 
 
 const editTask = () =>{
@@ -158,116 +158,8 @@ const Delete = () =>{
     ulAdd.innerHTML=``
     taskArray.splice(taskSupr,1)
     taskArray.forEach(element => {
-    printTask() 
-    
+    printTask(element) 
+        
     });
 }
 
-// RAMDOM Task
-
-const randomTask = () =>{
-    taskWrite = document.getElementById("taskwrite").value
-
-
-        const random = Math.floor(Math.random() * 3) + 1
-
-        if(random === 1){
-
-            ulAdd.innerHTML += `
-            <li class="flex lines " id="${i}" >
-        
-            <div class="flex line">
-              Fait la vaisselle
-               ${taskWrite}
-                
-                <div class="flex">
-                    <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-                    <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-                </div>
-            
-                <div class="flex">
-                    <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-                    <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-            
-                    <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-                    <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-            
-                </div>
-            </div> 
-            <Button>Priorité</Button> 
-        
-        
-            </li>
-            `  
-        }
-        else if(random === 2){
-
-            ulAdd.innerHTML += `
-            <li class="flex lines " id="${i}" >
-        
-            <div class="flex line">
-            partir à l'école
-               ${taskWrite}
-                
-                <div class="flex">
-                    <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-                    <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-                </div>
-            
-                <div class="flex">
-                    <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-                    <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-            
-                    <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-                    <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-            
-                </div>
-            </div> 
-            <Button>Priorité</Button> 
-        
-        
-            </li>
-            ` 
-        }
-        else{
-
-            ulAdd.innerHTML += `
-            <li class="flex lines " id="${i}" >
-        
-            <div class="flex line">
-               Qulle tâche veux-tu faire today
-               ${taskWrite}
-                
-                <div class="flex">
-                    <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-                    <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-                </div>
-            
-                <div class="flex">
-                    <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-                    <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-            
-                    <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-                    <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-            
-                </div>
-            </div> 
-            <Button>Priorité</Button> 
-        
-        
-            </li>
-            ` 
-        }
-        
-  
-    }
-// }
-buttonRandom = document.getElementById("Random")
-
-buttonRandom.addEventListener("click", randomTask)
-
-
-
-
-
-// <!-- ${taskCreate.status} -->
