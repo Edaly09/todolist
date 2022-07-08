@@ -22,7 +22,7 @@
                 <li>Doing</li>
                 <li>Done</li>
                 <li>All</li>
-                <img src="./iconesTel/cross.png" alt="Fermer burger" onclick="burgerClose()" class="burgerCross">
+                <img src="./iconesTel/cross.png" alt="Fermer burger" onclick="burgerClose()" class="burgermenu burgerCross ">
             </nav>
         </div>
        
@@ -39,16 +39,20 @@
             <section class="addForm">
                 <article class="flex alignColumn">
                     <form id="submitTodo" class="flex formulaire alignColumn"  onsubmit="onTaskSubmit(); return false;">
-                            <input type="text" class="input" id="taskwrite" placeholder="Entrer des Tâches">
+                            <input type="text" class="input" id="taskwrite" placeholder="Entrer une Tâche       ">
                             <div class="deuxbuttons flex alignColumn">
                             <button type="submit" class="submit">Envoyer</button>   
-                            <button class="random">Random</button>
+
                             </div>
                     </form>
+ 
+                    <button class="random" id="Random">Random</button>
+
+
                 </article>
                 <article class="flex alignColumn Naffiche formEdit" id="formEdit">
                     <form id="submitTodo" class="flex formulaire alignColumn"  onsubmit="editTask(); return false;">
-                            <input type="text" class="input" id="taskEditValue">
+                            <input type="text" class="input" id="taskEditValue" placeholder="Modifier la Tâche">
                             <select name="taskEditStatues" id="taskEditStatues">
                                 <option value="To do">To do</option>
                                 <option value="Doing">Doing</option>

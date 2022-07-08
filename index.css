@@ -24,6 +24,7 @@ body{
 
 }
 
+
 .pc {
         display: flex;
 }
@@ -40,8 +41,10 @@ header{
         align-items: center;
         margin-top: 20px;
         color: #FFFFFF;
+        
     
-}
+}   
+  
 
 /* icone */
 
@@ -222,6 +225,10 @@ select{
         display: none;
 }
 
+.burgermenu{
+        display: none;
+}
+
 /* version Tablette */
 
  @media (max-width:992px) {
@@ -288,8 +295,24 @@ select{
         .tel{
                 display: block;
         }
+        /* .burgermenu{
+                display: block;
+        } */
+        .Naffiche{
+                display: block;
+              }
+     .flex{
+        display: flex;
+     }
 
  }
+
+ .Naffiche{
+        display: none;
+      }
+      .burgermenu{
+        display: none;
+}
 
  /* version tel */
 
@@ -303,4 +326,10 @@ select{
         .line{
                 width: 70%;
         }
+        .burgermenu{
+                display: block;
+        }
+        .pc{
+                display: none;
+             }
 }
