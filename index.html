@@ -18,19 +18,19 @@
 
         <div class="Naffiche burger alignColumn burgerMenuDisplay" id="burger"> 
             <nav class="flex alignColumn">
-                <li id="To do filtre" onclick="statusFilter()">To do</li>
-                <li id="Doing filtre" onclick="statusFilter()">Doing</li>
-                <li id="Done filtre" onclick="statusFilter()">Done</li>
-                <li id="All filtre" onclick="statusFilter()">All</li>
+                <li class="To do" onclick="statusFilter()">To do</li>
+                <li class="Doing" onclick="statusFilter()">Doing</li>
+                <li class="Done" onclick="statusFilter()">Done</li>
+                <li class="All" onclick="statusFilter()">All</li>
                 <img src="./iconesTel/cross.png" alt="Fermer burger" onclick="burgerClose()" class="burgerCross">
             </nav>
         </div>
        
         <nav class="flex navpc">
-                <li>To do</li>
-                <li>Doing</li>
-                <li>Done</li>
-                <li>All</li> 
+            <li class="To do" onclick="statusFilter()">To do</li>
+            <li class="Doing" onclick="statusFilter()">Doing</li>
+            <li class="Done" onclick="statusFilter()">Done</li>
+            <li class="All" onclick="statusFilter()">All</li>
       </nav>
       <img src="./iconesTel/Vector-3.png" id="burgermenu" class="burgermenu burgerMenuDisplay" alt="menu burger " onclick="burgerOpen()">       
 
@@ -73,5 +73,6 @@
    </main>
    <script src="index.js"></script> 
    <script src="./burger.js"></script>
+   <script src="./thomas.js"></script>
 </body>
 </html>

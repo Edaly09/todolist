@@ -28,8 +28,6 @@ const onTaskSubmit = () => {
     i=0
     taskArray.forEach(element=>{
         printTask(element)
-
-
     })
     
 }
@@ -170,7 +168,6 @@ const Delete = () =>{
 // RAMDOM Task
 
 const randomTask = () =>{
-
     const randomTaskArray = ["partir à l'école","Faire la vaiselle", "Lire un livre", "Faire le css du projet"]
     const randomchoice = Math.floor(Math.random()*randomTaskArray.length)
     taskCreate = {
@@ -184,12 +181,7 @@ const randomTask = () =>{
         printTask(element)
     })
     }
-    
-  
-  
-
 
 buttonRandom = document.getElementById("Random")
 
 buttonRandom.addEventListener("click", randomTask)
-
