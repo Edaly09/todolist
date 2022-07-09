@@ -65,7 +65,7 @@ ulAdd.innerHTML += `
             Doing.classList.add("affiche")
             Done.classList.remove("affiche")
             Done.classList.add("Naffiche")
-        }else if (element.status.status==="Done"){
+        }else if (element.status==="Done"){
             Doing.classList.remove("affiche")
             Doing.classList.add("Naffiche")
             Done.classList.remove("Naffiche")
