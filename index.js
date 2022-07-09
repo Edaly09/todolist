@@ -20,6 +20,7 @@ let maPrio
 let select
 let option
 let myOptionline
+let showPrio
 
 // garder la priorité
 
@@ -106,6 +107,7 @@ prio(element)
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
         <div class="flex line">
+            <div class="laPriorité" id="showPrio${i}"></div>
             <div class="flex">
                 ${element.value} 
                 <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing${i}">
@@ -146,6 +148,15 @@ ulAdd.innerHTML += `
             Done.classList.add("Naffiche")
         }
 
+        showPrio = document.getElementById(`showPrio${i}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${element.Priorité}`)
+        
+
     i++
 }
 
@@ -174,6 +185,7 @@ const editTask = () =>{
     prio(taskArray[number])
     Limodiff.innerHTML= `
         <div class="flex line">
+            <div class="laPriorité" id="showPrio${number}"></div>
             <div class="flex">
                 ${taskArray[number].value} 
                 <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche"id="Doing${number}">
@@ -212,6 +224,14 @@ const editTask = () =>{
             Done.classList.remove("Naffiche")
             Done.classList.add("Naffiche")
         }
+
+        showPrio = document.getElementById(`showPrio${number}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${taskArray[number].Priorité}`)
 
     formEdit.classList.add("Naffiche")
     formEdit.classList.remove("affiche")
@@ -293,7 +313,14 @@ const priorité = () => {
         status: taskArray[j].status,
         Priorité: selectedPrio
     }
-    console.log(taskArray[j]);
-    console.log(taskArray);
+
+    showPrio = document.getElementById(`showPrio${j}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${selectedPrio}`)
+
 }
 
