@@ -28,6 +28,8 @@ const onTaskSubmit = () => {
     i=0
     taskArray.forEach(element=>{
         printTask(element)
+
+
     })
     
 }
@@ -146,6 +148,7 @@ const editTask = () =>{
 
     formEdit.classList.add("Naffiche")
     formEdit.classList.remove("affiche")
+
 }
 
 // deleteTask
@@ -159,6 +162,7 @@ const Delete = () =>{
     taskArray.splice(taskSupr,1)
     taskArray.forEach(element => {
     printTask(element) 
+
         
     });
 }
@@ -167,120 +171,25 @@ const Delete = () =>{
 
 const randomTask = () =>{
 
-
-        const random = Math.floor(Math.random() * 3) + 1
-
-        //  taskWrite = document.getElementById("taskwrite").value
+    const randomTaskArray = ["partir à l'école","Faire la vaiselle", "Lire un livre", "Faire le css du projet"]
+    const randomchoice = Math.floor(Math.random()*randomTaskArray.length)
     taskCreate = {
-        value: taskWrite,
+        value: randomTaskArray[randomchoice],
         status: "To do"
     }
     taskArray.push(taskCreate)
-    // ulAdd.innerHTML=`` 
+    ulAdd.innerHTML=``
     i=0
     taskArray.forEach(element=>{
         printTask(element)
     })
-        
-  
     }
+    
+  
+  
 
-   
 
 buttonRandom = document.getElementById("Random")
 
 buttonRandom.addEventListener("click", randomTask)
 
-
-
-
-
-
-
-
-
-
-// if(random === 1){
-
-//     ulAdd.innerHTML += `
-//     <li class="flex lines " id="${i}" >
-
-//     <div class="flex line">
-//       Fait la vaisselle
-        
-//         <div class="flex">
-//             <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-//             <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-//         </div>
-    
-//         <div class="flex">
-//             <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-//             <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-    
-//             <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-//             <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-    
-//         </div>
-//     </div> 
-//     <Button>Priorité</Button> 
-
-
-//     </li>
-//     `  
-// }
-// else if(random === 2){
-
-//     ulAdd.innerHTML += `
-//     <li class="flex lines " id="${i}" >
-
-//     <div class="flex line">
-//     partir à l'école
-        
-//         <div class="flex">
-//             <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-//             <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-//         </div>
-    
-//         <div class="flex">
-//             <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-//             <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-    
-//             <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-//             <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-    
-//         </div>
-//     </div> 
-//     <Button>Priorité</Button> 
-
-
-//     </li>
-//     ` 
-// }
-// else{
-
-//     ulAdd.innerHTML += `
-//     <li class="flex lines " id="${i}" >
-
-//     <div class="flex line">
-//        Qulle tâche veux-tu faire today
-        
-//         <div class="flex">
-//             <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing">
-//             <img src="./iconesordi/check.png" alt="Done" class="done Naffiche">
-//         </div>
-    
-//         <div class="flex">
-//             <img src="./iconesordi/Vector-2.png"class="stylo pc ${i}" alt="modif" onclick="AffichFormEdit()">
-//             <img src="./iconesTel/Vector-1.png"class="stylo tel ${i}" alt="modif" onclick="AffichFormEdit()">
-    
-//             <img src="./iconesordi/Vector-1.png" class="poubelle pc ${i}" alt="supr" onclick="Delete()">
-//             <img src="./iconesTel/Vector-2.png" class="poubelle tel ${i}" alt="supr" onclick="Delete()">
-    
-//         </div>
-//     </div> 
-//     <Button>Priorité</Button> 
-
-
-//     </li>
-//     ` 
-// }
