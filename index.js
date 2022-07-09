@@ -7,6 +7,7 @@ let taskWrite
 const formEdit = document.getElementById("formEdit")
 let classOfTask
 let i = 0
+let j=0
 let taskEditValue
 let taskEditStatues
 let Limodiff
@@ -14,6 +15,73 @@ let Doing
 let Done
 let theFiltre
 let filterArray = []
+let selectedPrio = "0"
+let maPrio
+let select
+let option
+let myOptionline
+
+// garder la priorité
+
+const prio = (element) =>{
+    console.log(element.Priorité);
+    if (element.Priorité==="0"){
+        maPrio=  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" selcted>0</option>
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+    </select> `
+    } else if (element.Priorité==="1"){
+        maPrio=  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" >0</option>
+        <option value="1" selected>1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+    </select> `
+    } else if (element.Priorité==="2"){
+        maPrio=  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" >0</option>
+        <option value="1" >1</option>
+        <option value="2" selected>2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+    </select> `
+    }else if (element.Priorité==="3"){
+        maPrio=  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" >0</option>
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" selected>3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+    </select> `
+    }else if (element.Priorité==="4"){
+        maPrio =  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" >0</option>
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" selected>4</option>
+        <option value="5" >5</option>
+    </select> `
+    }else if (element.Priorité==="5"){
+        maPrio=  `<select name="priorété" class="${i}" id="selectPriority${i}" onChange="priorité()">
+        <option value="0" >0</option>
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" selected>5</option>
+    </select> `
+    }
+    }
+
 
 // création todo
 
@@ -21,7 +89,8 @@ const onTaskSubmit = () => {
      taskWrite = document.getElementById("taskwrite").value
     taskCreate = {
         value: taskWrite,
-        status: "To do"
+        status: "To do",
+        Priorité: "0"
     }
     taskArray.push(taskCreate)
     ulAdd.innerHTML=``
@@ -33,6 +102,7 @@ const onTaskSubmit = () => {
 }
 // Affiche to do
 const printTask = (element) =>{
+prio(element)
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
         <div class="flex line">
@@ -52,13 +122,12 @@ ulAdd.innerHTML += `
 
             </div>
         </div> 
-        <Button>Priorité</Button>  
+        ${maPrio}
     </li>
     `
 
     Doing=document.getElementById(`Doing${i}`)
     Done=document.getElementById(`Done${i}`)
-    console.log(Doing);
 
         if (element.status==="Doing"){
             Doing.classList.remove("Naffiche")
@@ -94,25 +163,25 @@ const editTask = () =>{
     taskEditStatues=document.getElementById("taskEditStatues").value
     arrayClassOffTask=classOfTask.split(" ")
     const number=arrayClassOffTask[2]
-    taskCreate[number] = {
-        value: taskEditValue,
-        status: taskEditStatues
-    }
+    console.log(taskArray[number].Priorité);
     taskArray[number] = {
         value: taskEditValue,
-        status: taskEditStatues
+        status: taskEditStatues,
+        Priorité:taskArray[number].Priorité
     }
     Limodiff= document.getElementById(number)  
+    i = number
+    prio(taskArray[number])
     Limodiff.innerHTML= `
         <div class="flex line">
             <div class="flex">
-                ${taskCreate[number].value} 
+                ${taskArray[number].value} 
                 <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche"id="Doing${number}">
                 <img src="./iconesordi/check.png" alt="Done" class="done Naffiche" id="Done${number}">
             </div>
 
             <div class="flex">
-                <!-- ${taskCreate[number].status} -->
+                <!-- ${taskArray[number].status} -->
                 <img src="./iconesordi/Vector-2.png"class="stylo pc ${number}" alt="modif" onclick="AffichFormEdit()">
                 <img src="./iconesTel/Vector-1.png"class="stylo tel ${number}" alt="modif" onclick="AffichFormEdit()">
 
@@ -121,23 +190,23 @@ const editTask = () =>{
 
             </div>
         </div> 
-        <Button>Priorité</Button>  
+        ${maPrio}
         `
         Doing=document.getElementById(`Doing${number}`)
         Done=document.getElementById(`Done${number}`)
 
 
-        if (taskCreate[number].status==="Doing"){
+        if (taskArray[number].status==="Doing"){
             Doing.classList.remove("Naffiche")
             Doing.classList.add("affiche")
             Done.classList.remove("affiche")
             Done.classList.add("Naffiche")
-        }else if (taskCreate[number].status==="Done"){
+        }else if (taskArray[number].status==="Done"){
             Doing.classList.remove("affiche")
             Doing.classList.add("Naffiche")
             Done.classList.remove("Naffiche")
             Done.classList.add("affiche")
-        }else if (taskCreate[number].status==="To do"){
+        }else if (taskArray[number].status==="To do"){
             Doing.classList.remove("Naffiche")
             Doing.classList.add("Naffiche")
             Done.classList.remove("Naffiche")
@@ -172,7 +241,8 @@ const randomTask = () =>{
     const randomchoice = Math.floor(Math.random()*randomTaskArray.length)
     taskCreate = {
         value: randomTaskArray[randomchoice],
-        status: "To do"
+        status: "To do",
+        Priorité: "0"
     }
     taskArray.push(taskCreate)
     ulAdd.innerHTML=``
@@ -209,3 +279,21 @@ const statusFilter = () =>{
     })
     filterArray=[]
 }
+
+const priorité = () => {
+    j = event.target.className
+    console.log(j);
+    select = document.getElementById(event.target.id);
+    option = select.options[select.selectedIndex];
+    selectedPrio=option.value
+    console.log(taskArray[j]);
+    console.log(selectedPrio);
+    taskArray[j] = {
+        value: taskArray[j].value,
+        status: taskArray[j].status,
+        Priorité: selectedPrio
+    }
+    console.log(taskArray[j]);
+    console.log(taskArray);
+}
+
