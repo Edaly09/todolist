@@ -28,10 +28,12 @@ const onTaskSubmit = () => {
     i=0
     taskArray.forEach(element=>{
         printTask(element)
+
     })
     
 }
 // Affiche to do
+
 const printTask = (element) =>{
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
@@ -186,7 +188,7 @@ buttonRandom = document.getElementById("Random")
 
 buttonRandom.addEventListener("click", randomTask)
 
-// Filtre
+// Filtre 
 
 const statusFilter = () =>{
     theFiltre = event.target.className
