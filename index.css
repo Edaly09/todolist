@@ -200,6 +200,7 @@ select{
 }
 
 .line {
+        position: relative;
         align-items: center;
         justify-content: space-between;
         width: 100%;
@@ -230,8 +231,37 @@ select{
         display: none;
 }
 
-.burgermenu{
-        display: none;
+.laPriorité{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 100px;
+        height: 10px;
+        border-radius: 10px;
+}
+
+.prio0{
+        background: none;
+}
+
+.prio1{
+        background: lightgreen;
+}
+
+.prio2{
+       background: green; 
+}
+
+.prio3{
+        background: orange;
+}
+
+.prio4{
+        background: orangered;
+}
+
+.prio5{
+        background: red;
 }
 
 .burgermenu{

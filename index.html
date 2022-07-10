@@ -62,7 +62,12 @@
                    
             </section>
             <section class="priority">
-                    <button class="trie">Trie priorités</button>
+                    <select id="triage" class="trie" onChange="triPriorité()">
+                        <option value="normal" selected>Par ordre de création</option>
+                        <option value="croissant">Priorité croissante</option>
+                        <option value="décroissant">Priorité décroissante</option>
+                        
+                    </select>
                     <ul id="ul">
                     
                     </ul>
@@ -74,6 +79,5 @@
    
    <script src="index.js"></script> 
    <script src="./burger.js"></script>
-   <script src="./thomas.js"></script>
 </body>
 </html>

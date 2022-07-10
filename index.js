@@ -20,6 +20,9 @@ let maPrio
 let select
 let option
 let myOptionline
+let showPrio
+let selectedTrie
+let prioTrié = []
 
 // garder la priorité
 
@@ -108,6 +111,7 @@ prio(element)
 ulAdd.innerHTML += `
     <li class="flex lines " id="${i}" >
         <div class="flex line">
+            <div class="laPriorité" id="showPrio${i}"></div>
             <div class="flex">
                 ${element.value} 
                 <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche" id="Doing${i}">
@@ -148,6 +152,15 @@ ulAdd.innerHTML += `
             Done.classList.add("Naffiche")
         }
 
+        showPrio = document.getElementById(`showPrio${i}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${element.Priorité}`)
+        
+
     i++
 }
 
@@ -176,6 +189,7 @@ const editTask = () =>{
     prio(taskArray[number])
     Limodiff.innerHTML= `
         <div class="flex line">
+            <div class="laPriorité" id="showPrio${number}"></div>
             <div class="flex">
                 ${taskArray[number].value} 
                 <img src="./iconesordi/Vector.png" alt="doing" class="doing Naffiche"id="Doing${number}">
@@ -214,6 +228,14 @@ const editTask = () =>{
             Done.classList.remove("Naffiche")
             Done.classList.add("Naffiche")
         }
+
+        showPrio = document.getElementById(`showPrio${number}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${taskArray[number].Priorité}`)
 
     formEdit.classList.add("Naffiche")
     formEdit.classList.remove("affiche")
@@ -264,7 +286,6 @@ const statusFilter = () =>{
     theFiltre = event.target.className
     if (theFiltre==="All"){
         filterArray = taskArray
-        console.log(filterArray);
     }else{
         taskArray.forEach(element=>{
             console.log(element.status,theFiltre );
@@ -273,7 +294,6 @@ const statusFilter = () =>{
             }
         })
     }
-    console.log(filterArray);
     ulAdd.innerHTML=``
     i=0
     filterArray.forEach(element=>{
@@ -288,14 +308,102 @@ const priorité = () => {
     select = document.getElementById(event.target.id);
     option = select.options[select.selectedIndex];
     selectedPrio=option.value
-    console.log(taskArray[j]);
-    console.log(selectedPrio);
     taskArray[j] = {
         value: taskArray[j].value,
         status: taskArray[j].status,
         Priorité: selectedPrio
     }
-    console.log(taskArray[j]);
-    console.log(taskArray);
+
+    showPrio = document.getElementById(`showPrio${j}`)
+        showPrio.classList.remove("prio0")
+        showPrio.classList.remove("prio1")
+        showPrio.classList.remove("prio2")
+        showPrio.classList.remove("prio3")
+        showPrio.classList.remove("prio5")
+        showPrio.classList.add(`prio${selectedPrio}`)
+
 }
 
+const triPriorité = () =>{
+    select = document.getElementById(event.target.id);
+    option = select.options[select.selectedIndex];
+    selectedTrie=option.value
+    console.log(selectedTrie);
+
+    const prio5 = taskArray.filter(number =>{
+        return number.Priorité==="5"
+    })
+    const prio4 = taskArray.filter(number =>{
+        return number.Priorité==="4"
+    })
+    const prio3 = taskArray.filter(number =>{
+        return number.Priorité==="3"
+    })
+    const prio2 = taskArray.filter(number =>{
+        return number.Priorité==="2"
+    })
+    const prio1 = taskArray.filter(number =>{
+        return number.Priorité==="1"
+    })
+    const prio0 = taskArray.filter(number =>{
+        return number.Priorité==="0"
+    })
+    console.log(prio5);
+    if(selectedTrie==="normal"){
+        ulAdd.innerHTML=``
+        i=0
+        taskArray.forEach(element => {
+            printTask(element)    
+            });
+    }else if (selectedTrie==="croissant"){
+        prio0.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio1.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio2.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio3.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio4.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio5.forEach(element=>{
+            prioTrié.push(element)
+        })
+        ulAdd.innerHTML=``
+        i=0
+        prioTrié.forEach(element=>{
+        printTask(element)
+         })
+         prioTrié= []
+    }else if (selectedTrie==="décroissant"){
+        prio5.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio4.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio3.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio2.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio1.forEach(element=>{
+            prioTrié.push(element)
+        })
+        prio0.forEach(element=>{
+            prioTrié.push(element)
+        })
+        ulAdd.innerHTML=``
+        i=0
+        prioTrié.forEach(element=>{
+        printTask(element)
+         })
+         prioTrié= []
+    }
+}
